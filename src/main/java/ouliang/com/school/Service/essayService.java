@@ -101,7 +101,7 @@ public class essayService {
 
     public int deleteEssay(int id){
         Essay essay= essayDao.selectEssayById(id);
-        new Path().deleteFile(essay.getCover().replace("http://ouliang.icu\\",""));
+        new Path().deleteFile(essay.getCover().replace("http://ouliang.icu/",""));
         essayDao.deleteEssay(id);
         return 1;
     }
@@ -109,7 +109,7 @@ public class essayService {
     public int deleteVideo(int id){
         Video video= essayDao.selectVideoById(id);
         new Path().deleteFile("wen/"+video.getVideo());
-        new Path().deleteFile(video.getCover().replace("http://ouliang.icu\\",""));
+        new Path().deleteFile(video.getCover().replace("http://ouliang.icu/",""));
         essayDao.deleteVideo(id);
         return 1;
     }

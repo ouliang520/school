@@ -11,8 +11,11 @@ import ouliang.com.school.Service.essayService;
 import ouliang.com.school.pojo.Essay;
 import ouliang.com.school.pojo.Img;
 import ouliang.com.school.pojo.Video;
+import ouliang.com.school.pojo.VideoZipTask;
 import ouliang.com.school.util.Path;
+import ouliang.com.school.util.VideoUtil;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -22,12 +25,15 @@ import java.util.List;
 
 @Controller
 public class essayController {
-    final String Server = "http://ouliang.icu\\wen\\";//服务器文件存放地址
+    final String Server = "http://ouliang.icu/wen/";//服务器文件存放地址
     @Autowired
     essayService essayService;
 
     @Autowired
     ImgService imgService;
+
+    @Resource
+    VideoUtil videoUtil;
 
     @PostMapping("/tijiao1")
     @ResponseBody
@@ -92,8 +98,8 @@ public class essayController {
         }
 
         Date date = new Date();
-        String resourcesPath = str + "//" + date.getTime() + coverName;
-        String resourcesPath1 = str + "//" + date.getTime() + Name;
+        String resourcesPath = str + "/" + date.getTime() + coverName;
+        String resourcesPath1 = str + "/" + date.getTime() + Name;
         File upFile = new File(resourcesPath);
         File upFile1 = new File(resourcesPath1);//视频
         try {
@@ -102,6 +108,7 @@ public class essayController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        videoUtil.addTask(new VideoZipTask(date.getTime() + Name));
         Video video = new Video();
         video.setVideo(date.getTime() + Name);
         video.setEnddata(date);
@@ -109,7 +116,7 @@ public class essayController {
         video.setTitle(title);
         video.setTitle(introduce);
         video.setCover(Server + date.getTime() + coverName);
-        video.setText("<p>"+introduce+"</p>");
+        video.setText(introduce);
 
         essayService.addVideo(video);
 
@@ -205,8 +212,7 @@ public class essayController {
     @GetMapping("/getJDK")
     @ResponseBody
     public String getJdk() {
-        Video video = essayService.selectVideoById(37);
-        String str = new Path().getJDK() + "wen/" + video.getVideo();
+        String str = new Path().getJDK() + "wen/" ;
         return str;
     }
 
@@ -365,17 +371,26 @@ public class essayController {
         return "admin/deleteVideo";
     }
 
+//    @GetMapping("cesi")
+//    @ResponseBody
+//    public String cesi(@RequestParam String videoName){
+//        Runtime rt =Runtime.getRuntime();
+//        videoName="/www/wwwroot/ouliang.icu/wen/"+videoName;
+//        try {
+//            Process pr=rt.exec("ffmpeg -i "+videoName+" -vcodec h264 -s 1280*720 -acodec copy -f mp4 /www/wwwroot/ouliang.icu/wen/out.mp4");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return "成功没?";
+//    }
+
     @GetMapping("cesi")
     @ResponseBody
-    public String cesi(){
-        Runtime rt =Runtime.getRuntime();
-        try {
-            Process pr=rt.exec("ffmpeg -i /www/wwwroot/ouliang.icu/wen/166987023473255-章梓虹-斯特朗.mp4 -vcodec h264 -s 1280*720 -acodec copy -f mp4 /www/wwwroot/ouliang.icu/wen/out.mp4");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return "成功没?";
+    public String cesi(@RequestParam String videoName){
+//        videoUtil.addTask(new VideoZipTask(videoName));
+        new Path().deleteFile("http://ouliang.icu/wen/1677604277161favicon.ico".replace("http://ouliang.icu/",""));
+        return new Path().getJDK()+"http://ouliang.icu/wen/1677604277161favicon.ico".replace("http://ouliang.icu/","");
     }
 
 }
