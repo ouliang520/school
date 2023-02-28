@@ -365,12 +365,17 @@ public class essayController {
         return "admin/deleteVideo";
     }
 
-//    @GetMapping("cesi")
-//    @ResponseBody
-//    public String cesi(){
-////        new Path().deleteFile("wen/p/"+"1669520769767javaweb.mp4");
-//        new File("/www/wwwroot/ouliang.icu/wen/1669520769767javaweb.mp4").delete();
-//        return new Path().getJDK()+"wen/"+"1669520769767javaweb.mp4";
-//    }
+    @GetMapping("cesi")
+    @ResponseBody
+    public String cesi(){
+        Runtime rt =Runtime.getRuntime();
+        try {
+            Process pr=rt.exec("ffmpeg -i /www/wwwroot/ouliang.icu/wen/166987023473255-章梓虹-斯特朗.mp4 -vcodec h264 -s 1280*720 -acodec copy -f mp4 /www/wwwroot/ouliang.icu/wen/out.mp4");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "成功没?";
+    }
 
 }
