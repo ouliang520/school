@@ -1,0 +1,85 @@
+header form{
+	width: 460px;
+	height: 34px;
+	position: absolute;
+	left: 729px;
+	margin: auto;
+	border-radius: 4px;
+}
+header form input[type="text"]{
+	height: 100%;
+	width: 100%;
+	background-color: #FFFFFF;
+	border: 1px solid #E7E7E7;
+	text-indent: 10px;
+}
+header form  input[type="text"]:focus{
+	outline: none;
+}
+header form  .fangda{
+	width: 48px;
+	height: 34px;
+	position: absolute;
+	top: 14px;
+	right: -1px;
+	border-radius: 2px;
+	background:#F4F4F4 url(../img/header/fangda1.png) no-repeat 15px 8px;
+	cursor: pointer;
+}
+header form .fangda:hover{
+	background:#F4F4F4 url(../img/header/fangda2.png) no-repeat 16px 8px;
+}
+
+header{
+	background: url(../img/header/dao.png) no-repeat;
+	background-size:  cover;
+	height: 181px;
+}
+.hleft .logo{
+	background: url(../img/header/logo1.png) no-repeat  20px 22px;
+}
+.hleft .logo a .zhuzhan{
+	color: #FFFFFF;
+	margin-left: 45px;
+	background: none;
+}
+.hleft ul{
+	left: 85px;
+}
+.hleft ul li .zhuli{
+	color: #FFFFFF;
+}
+.hleft ul .xiazai a{
+	background: url(../img/header/shouji1.png) no-repeat;
+}
+.hright .rul li a{
+	color: #FFFFFF;
+}
+.hleft ul li:hover .zhuli{
+	color: #FFFFFF;
+}
+.logo2{
+	position: absolute;
+	top: 80px;
+	left: 280px;
+}
+.jiayou{
+	color: #FFFFFF;
+	background-color: rgba(0,0,0,.5);
+	position: absolute;
+	top: 105px;
+	left: 588px;
+	border-radius: 4px;
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+	padding: 0px 5px;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .2s;
+	-webkit-transition: all .2s;
+}
+header:hover .jiayou{
+	visibility: visible;
+	opacity: 1;
+}

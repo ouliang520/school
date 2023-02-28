@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ namespace：必须有值，自定义的唯一字符串
+ 推荐使用：dao 接口的全限定名称
+-->
+
+<mapper namespace="ouliang.com.school.Dao.ImgDao">
+
+    <resultMap id="Img" type="ouliang.com.school.pojo.Img">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="file" column="file"/>
+    </resultMap>
+
+    <update id="insertImg">
+        update img set title=#{title},file=#{file} where id=#{id}
+    </update>
+
+    <select id="selectImg" resultMap="Img">
+        select * from img
+    </select>
+
+    <select id="selectImg0" resultType="java.lang.String">
+        select file from img where id =#{id}
+    </select>
+
+</mapper>
+        <!--
+ sql映射文件:写sql语句的,mybatis会执行这些sql
+ 1.指定约束文件
+    <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    mybatis+3+mapper.dtd是约束文件的名称,扩展名是dtd的.
+ 2.约束文件作业: 限制,检查在当前文件中出现的标签,苏醒不许符号mybatis的要求
+
+ 3.mapper 是当前文件的根标签,必须的
+   namespace:叫做命名空间,是唯一值的,可以是自定义的字符串.
+             要求你使用dao接口的全限定名称
+
+4.在当前文件中,可以使用特定的标签,表示数据库的特定操作
+    <select>:表示执行查询,select语句
+    <update>:表示更新数据库的操作,就是在<update>标签中写的是update sql语句
+    <insert>:表示插入,放的是insert语句
+    <dalate>:表示删除,执行的delate语句
+ -->

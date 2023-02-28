@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes">
+  <title>封面修改</title>
+  <link rel="stylesheet" href="css/57.css">
+</head>
+<body>
+<form action="/LoadUpImg" method="post" enctype="multipart/form-data">
+  <div class="container" style="height: auto">
+    <div class="tit">封面修改(本地文件上传)</div>
+    <input type="text" name="id" placeholder="第几张图(从左到右1-7)">
+    <input type="text" name="title" placeholder="标题">
+    <a id="picture">图片</a><input type="File"  style="min-height: 26px" name="multipartFile"  onchange="showPreview(this)">
+    <img id="portrait" src="" style="display:none;max-width: 350px;max-height: 350px" />
+    <button type="submit">提交</button>
+  </div>
+</form>
+<div class="square">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+<div class="circle">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+  function showPreview(source) {
+    var file = source.files[0];
+    if(window.FileReader) {
+      var fr = new FileReader();
+      var portrait = document.getElementById('portrait');
+      fr.onloadend = function(e) {
+        portrait.src = e.target.result;
+      };
+      fr.readAsDataURL(file);
+      portrait.style.display = 'block';
+    }
+  }
+</script>

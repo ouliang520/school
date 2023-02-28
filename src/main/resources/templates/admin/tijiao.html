@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
+    <meta charset="UTF-8">
+    <title>提交界面</title>
+</head>
+<body>
+<div>
+    <font size="5">文章添加区</font>
+        <form action="tijiao1" method="post" enctype="multipart/form-data">
+            标题:<br>
+            <input type="text" name="title">
+            <br>
+            介绍:<br>
+            <input type="text" name="introduce">
+            <br>
+            选择封面:<br>
+            <input type="file" name="coverFile">
+            <br>
+            <label class="col-sm-2 control-label">文章内容:</label>
+            <textarea id="content" name="text"></textarea>
+            <br>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+<style>
+    div {
+        border: 1px solid red;
+        width: 500px;
+        float: left;
+    }
+</style>
+
+<div>
+    <font size="5">视频添加区</font>
+    <form action="tijiao2" method="post" enctype="multipart/form-data">
+        标题:<br>
+        <input type="text" name="title">
+        <br>
+        介绍:<br>
+        <input type="text" name="introduce">
+        <br>
+        选择封面:<br>
+        <input type="file" name="coverFile">
+        <br>
+        选择视频:<br>
+        <input type="file" name="File">
+        <br>
+        <label class="col-sm-2 control-label">视频内容:</label>
+        <textarea  name="text"></textarea>
+        <br>
+        <input type="submit" value="提交">
+    </form>
+</div>
+<style>
+    div {
+        border: 1px solid red;
+        width: 500px;
+        float: left;
+    }
+</style>
+<div>
+    <font size="5">图片链接上传区</font>
+    <form th:action="downloadURL" method="get">
+        第几张图(从左到右1-7):
+        <input name="id" type="text">
+        <br>
+        标题:
+        <input name="title" type="text">
+        <br>
+        图片链接:
+        <input name="ImgURL" type="text">
+        <input type="submit" value="提交">
+    </form>
+</div>
+<style>
+    div {
+        border: 1px solid red;
+        width: 500px;
+        float: left;
+    }
+</style>
+<div>
+    <font size="5">本地文件上传区</font>
+    <form th:action="LoadUpImg" method="post" enctype="multipart/form-data">
+        第几张图(从左到右1-7):
+        <input name="id" type="text">
+        <br>
+        标题:
+        <input name="title" type="text">
+        <br>
+        <input name="multipartFile" type="file">
+        <input type="submit" value="提交">
+    </form>
+</div>
+
+<div>
+    <font size="5">公众号添加区</font>
+    <form action="/tijiao3" method="post" enctype="multipart/form-data">
+        标题:<br>
+        <input type="text" name="title">
+        <br>
+        介绍:<br>
+        <input type="text" name="introduce">
+        <br>
+        选择封面:<br>
+        <input type="file" name="coverFile">
+        <br>
+        转载公众号文章,在此处填写公众号文章链接即可:<br>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">公众号链接:</label>
+            <div class="col-sm-8">
+                <textarea name="text"></textarea>
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="提交">
+    </form>
+</div>
+<div>
+    <br>
+    <a href="391ad4e4d115fc48d1f004005bb95deb">删除文章</a>
+    <a href="f2e2c325336a2bce2b5175818514f92d">删除视频</a>
+</div>
+
+</body>
+</html>

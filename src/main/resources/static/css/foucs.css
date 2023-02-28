@@ -1,0 +1,124 @@
+.icon-arrow-a-left, .icon-arrow-a-right {
+    background: url(../img/icon-sd26986d847.png) no-repeat;
+}
+
+.icon-arrow-a-left {
+    background-position: 0 0; height: 50px; width: 50px;
+}
+
+.icon-arrow-a-left:hover, .icon-arrow-a-left.arrow-a-left_hover, .icon-arrow-a-left.arrow-a-left-hover {
+    background-position: -60px 0;transition: all 0s !important;
+}
+
+.icon-arrow-a-right {
+    background-position: -120px 0;
+    height: 50px;
+    width: 50px;
+}
+
+.icon-arrow-a-right:hover, .icon-arrow-a-right.arrow-a-right_hover, .icon-arrow-a-right.arrow-a-right-hover {
+    background-position: -180px 0;transition: all 0s !important;
+}
+.banner_box{   
+    height: 600px;
+    width: 100%;
+    margin: 0px auto 30px auto;
+    overflow: hidden;}
+
+#index_b_hero {
+    width: 1380px;
+    margin: auto;
+    position: relative;
+}
+
+#index_b_hero .helper {
+    position: relative;
+    height: 460px;
+}
+
+
+#index_b_hero img {
+    width: 100%;
+    height: 550px;
+}
+
+#index_b_hero .heros {
+    width: 1380px;
+}
+
+#index_b_hero .hero-wrap {
+    overflow: visible;
+    position: absolute;
+}
+#index_b_hero .heros li a{  
+   display: block;
+    width: 100%;
+ }
+#index_b_hero .next, #index_b_hero .prev {
+    filter: alpha(Opacity=70);
+    opacity: .5;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: 0;
+    background-color: #9b1c27;
+    z-index: 3;
+}
+
+#index_b_hero .next:hover, #index_b_hero .prev:hover {
+    background-color: #9b1c27;
+    opacity: .8;
+}
+
+#index_b_hero .next {
+    margin: -25px 0 0 0;
+    right: 0;
+}
+
+#index_b_hero .disabled {
+    background-color: #eee;
+}
+
+#index_b_hero .mask-left, #index_b_hero .mask-right, #index_b_hero .hero {
+    padding: 0;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: 1380px;
+    overflow: hidden;
+    left: 2520px;
+}
+
+#index_b_hero .hero h1{
+  position: absolute;
+    bottom: 30px;
+    max-width: 550px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    left: 50%;
+margin-left:-580px;
+color:#fff;
+padding:0 20px;
+font-size:24px;
+font-weight:700;
+    background: rgba(155,28,39,0.5);
+}
+
+#index_b_hero .mask-right, #index_b_hero .mask-left {
+    z-index: 4;
+    left: -1260px;
+    filter: alpha(Opacity=50);
+    opacity: .5;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+#index_b_hero .mask-right {
+    left: 1260px;
+}
+
+#index_b_hero .active {
+    z-index: 2;
+    left: 0;
+}

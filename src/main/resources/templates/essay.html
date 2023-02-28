@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN / DENY ">
+    <title th:text="${essay.getTitle()}"></title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/basic.css" rel="stylesheet">
+    <link href="/css/style_nc.css" rel="stylesheet">
+    <script type="text/javascript" src="../../dfiles/11295/public/static/bdtx2.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/js/bdtx.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="_sitegray/_sitegray_d.css">
+    <script language="javascript" src="_sitegray/_sitegray.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/content.vsb.css">
+    <script type="text/javascript" src="/js/counter.js"></script>
+    <script type="text/javascript">_jsq_(1003, '/content.jsp', 11106, 1563615159)</script>
+</head>
+
+<body>
+
+<!-- 头部 -->
+<div class="header">
+    <div class="container">
+        <div class="logo" style="vertical-align: middle;">
+            <a title="广药易班" style="color: #FFFFFF; font-size: 36px; font-weight: 800;text-decoration : none"><img
+                    src="/img/xh.jpg" style="vertical-align: middle;">广药大易班拾光映像工作室</a>
+        </div>
+        <div>
+            <div class="theme-popover">
+                <div class="theme-poptit">
+                    <a href="javascript:;" title="关闭" class="close">×</a>
+                </div>
+                <div class="theme-popbod dform">
+                    <img src="/img/weixin.jpg">
+                </div>
+            </div>
+            <div class="theme-popover2">
+                <div class="theme-poptit">
+                    <a href="javascript:;" title="关闭" class="close">×</a>
+                </div>
+                <div class="theme-popbod dform">
+                    <img src="/img/newweibo.jpg">
+                </div>
+            </div>
+        </div>
+
+        <span style="margin:40px 0;">
+                <script type="text/javascript">
+                    function _nl_ys_check() {
+
+                        var keyword = document.getElementById('showkeycode248646').value;
+                        if (keyword == null || keyword == "") {
+                            alert("请输入你要检索的内容！");
+                            return false;
+                        }
+                        if (window.toFF == 1) {
+                            document.getElementById("lucenenewssearchkey248646").value = Simplized(keyword);
+                        } else {
+                            document.getElementById("lucenenewssearchkey248646").value = keyword;
+                        }
+                        var base64 = new Base64();
+                        document.getElementById("lucenenewssearchkey248646").value = base64.encode(document.getElementById("lucenenewssearchkey248646").value);
+                        new VsbFormFunc().disableAutoEnable(document.getElementById("showkeycode248646"));
+                        return true;
+                    }
+                </script>
+                	<div style="margin-left: auto;">
+					    <form action="/select" method="post" id="au1a" name="au1a"
+                            onsubmit="return _nl_ys_check()" class="search-form">
+						    <input width="186px" name="TitleName" id="showkeycode248646" type="text" class="search">
+						    <div class="sch-btn"><input type="image" src="/img/xicon35.jpg" value="" class="btn-search">
+						    </div>
+
+					    </form>
+				    </div>
+                <script language="javascript" src="/js/base64.js"></script>
+                <script language="javascript" src="/js/formfunc.js"></script>
+
+            </span>
+        <div class="ggicon">
+            <script language="javascript" src="/js/dynclicks.js"></script>
+
+
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('.theme-login').click(function () {
+                    $('.theme-popover-mask').fadeIn(100);
+                    $('.theme-popover').slideDown(200);
+                })
+                $('.theme-poptit .close').click(function () {
+                    $('.theme-popover-mask').fadeOut(100);
+                    $('.theme-popover').slideUp(200);
+                })
+                $('.theme-weibo').click(function () {
+                    $('.theme-popover-mask').fadeIn(100);
+                    $('.theme-popover2').slideDown(200);
+                })
+                $('.theme-poptit .close').click(function () {
+                    $('.theme-popover-mask').fadeOut(100);
+                    $('.theme-popover2').slideUp(200);
+                })
+            });
+        </script>
+    </div>
+</div>
+<nav role="navigation" class="navbar navbar-inverse">
+    <!--navbar-fixed-top -->
+    <div class="container navbarhead">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
+                    class="navbar-toggle" type="button">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <a class="navbar-brand" href="/index">首页</a>
+        <a class="navbar-brand" href="/selectVideo/1">视频列表</a>
+        <a class="navbar-brand" href="/select/1">文章列表</a>
+    </div>
+</nav>
+<style>
+    .theme-popover2 {
+        z-index: 9999;
+        position: fixed;
+        top: 50%;
+        left: 60%;
+        width: 200px;
+        height: 186px;
+        margin: -120px 0 0 -300px;
+        border-radius: 5px;
+        border: solid 2px #666;
+        background-color: #fff;
+        display: none;
+        box-shadow: 0 0 10px #666;
+    }
+</style>
+
+<!-- /头部 -->
+
+<!-- 主体 -->
+
+<div id="main-container" class="container">
+    <div class="row">
+        <div style="height:20px;"></div>
+
+        <div class="col-sm-11 col-lg-9">
+            <section id="contents">
+                <div class="dhx">
+                    <a href="/index">首页<i class="icon-chevron-right"></i></a>
+                    &gt;
+                    <a th:text="${essay.getTitle()}"></a>
+                </div>
+
+                <script language="javascript" src="/js/NewsvoteDWR.js"></script>
+                <script language="javascript" src="/js/engine.js"></script>
+                <script language="javascript" src="/js/newscontent.js"></script>
+                <link href="/css/photoswipe.css" type="text/css" rel="stylesheet">
+                <script language="javascript" src="/js/klass.min.js"></script>
+                <script language="javascript" src="/js/ajax.js"></script>
+                <form name="_newscontent_fromname">
+
+                    <div class="passage" style=" overflow: hidden;">
+
+                        <p style="text-align: center;font-weight: bold;font-size: 24px" th:text="${essay.getTitle()}"
+                           th:title="${essay.getTitle()}">标题</p>
+                        <p style="text-align: center;color: #999" th:text="${essay.getEnddata()}"> 时间 xxxx
+                        </p>
+
+
+                        <div id="vsb_content">
+                            <div class="v_news_content">
+                                <p><img th:src="${essay.getCover()}" src="//img/a.jpg" width="800"
+                                        class="img_vsb_content"
+                                        style="text-align: center;"></p>
+                                <div th:utext="${essay.getText()}">
+                                    内容
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_vote_id"></div>
+
+                        <p class="MsoNormal">
+                            <br>
+                        </p>
+
+
+                        <br>
+                        <br>
+
+
+                        <br>
+                        <a>下一条：xxx</a>
+
+
+                    </div>
+
+                </form>
+
+
+                <script>
+                    $(".passage video").parents("p").css("textIndent", "0");
+                    $(".passage video").css({"width": "100%", "height": ""});
+                    $(".passage img").parents("p").css("textIndent", "0");
+                    $(".passage img").css({"width": "100%", "height": ""});
+                </script>
+            </section>
+
+        </div>
+
+
+        <div class="col-sm-11 col-lg-3">
+            <div class="panel pannel1">
+                <div class="panel-heading">
+                    <h3 class="panel-title">最新文章</h3>
+                </div>
+                <div class="panel-body pblist1">
+
+                    <li th:each="essay1 : ${essays}">
+                        <a th:if="${essay.getFlag().equals('0')}"
+                           th:href="@{'/essay/'+${essay1.getId()}}" target="_blank"
+                           th:title="${essay1.getIntroduce()}"
+                           th:text="${essay1.getTitle()}">第一</a>
+                        <a th:if="${essay.getFlag().equals('1')}" th:href="${essay.getText()}" target="_blank"
+                           th:title="${essay1.getIntroduce()}"
+                           th:text="${essay1.getTitle()}">第一</a>
+                    </li>
+
+
+                </div>
+                <script>_showDynClickBatch(['dynclicks_u6_11106', 'dynclicks_u6_11104', 'dynclicks_u6_11105', 'dynclicks_u6_11096', 'dynclicks_u6_11092', 'dynclicks_u6_11091'], [11106, 11104, 11105, 11096, 11092, 11091], "wbnews", 1563615159)</script>
+
+            </div>
+            <div class="panel pannel1">
+                <div class="panel-heading">
+                    <h3 class="panel-title">最新视频</h3>
+                </div>
+                <div class="panel-body pblist1">
+                    <li th:each="video1 :${videos}"><a th:href="@{'/video/'+${video1.getId()}}" target="_blank"
+                                                       th:title="${video1.getIntroduce()}"
+                                                       th:text="${video1.getTitle()}">第二</a></li>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<link rel="stylesheet" type="text/css" href="/css/index.css" />
+<script type="text/javascript">
+    $(function () {
+        $(window).resize(function () {
+            $("#main-container").css("min-height", $(window).height() - 230);
+        }).resize();
+    })
+</script>
+<!-- /主体 -->
+
+<!-- 底部 -->
+<div class="footer">
+    <div class="footer-content">
+        <a title="广药大易班拾光映像工作室" style="color: #FFFFFF; font-size: 36px; font-weight: 800;text-decoration : none">
+            <img src="/img/xh.jpg" style="vertical-align: middle;">广药大易班拾光映像工作室</a>
+        <div class="content-right">
+            <div class="ewm">
+                <span><img src="/img/er.jpg" alt="" width="100%"></span>
+                <div class="ewm-gz">
+                    <p>扫一扫</p>
+                    <p>关注我们</p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="banquan">
+        <p>xxxxxx</p><p><a href="http://beian.miit.gov.cn" target="_blank">备案号</a></p>
+    </div>
+</div>
+</body>
+
+</html>

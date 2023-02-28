@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>公众号上传</title>
+  <link rel="stylesheet" href="css/57.css">
+</head>
+<body>
+<form action="/tijiao3" method="post" enctype="multipart/form-data">
+  <div class="container" style="height: auto">
+    <div class="tit">公众号上传界面</div>
+    <input type="text" name="title" placeholder="标题">
+    <input type="text" name="introduce" placeholder="介绍">
+    <a style="height: 13px">封面图片</a><input  style="min-height: 26px" id="picture" type="file" name="coverFile"  onchange="showPreview(this)">
+    <img id="portrait" src="" style="display:none;max-width: 340px;max-height: 350px"/>
+    <input type="text" name="text" placeholder="公众号链接">
+    <button type="submit">提交</button>
+  </div>
+</form>
+</body>
+</html>
+<script type="text/javascript">
+  function showPreview(source) {
+    var file = source.files[0];
+    if(window.FileReader) {
+      var fr = new FileReader();
+      console.log(fr);
+      var portrait = document.getElementById('portrait');
+      fr.onloadend = function(e) {
+        portrait.src = e.target.result;
+      };
+      fr.readAsDataURL(file);
+      portrait.style.display = 'block';
+    }
+  }
+</script>

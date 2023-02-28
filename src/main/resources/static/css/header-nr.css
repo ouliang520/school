@@ -1,0 +1,29 @@
+header .h_shuru{
+	width: 460px;
+	height: 34px;
+	position: absolute;
+	left: 729px;
+	margin: auto;
+}
+header .h_shuru input[type="text"]{
+	height: 100%;
+	width: 100%;
+	background-color: #F4F4F4;
+	border: 1px solid #E7E7E7;
+	text-indent: 10px;
+}
+header .h_shuru input[type="text"]:focus{
+	outline: none;
+}
+header .h_shuru .fangda{
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	top: 22px;
+	right: 10px;
+	background: url(../img/header/fangda1.png) no-repeat;
+	cursor: pointer;
+}
+header .h_shuru .fangda:hover{
+	background: url(../img/header/fangda2.png) no-repeat 1px 0px;
+}
